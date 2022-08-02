@@ -22,3 +22,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// You can add dependencies on the command line, the example one is 
+// flutter pub add english_words
