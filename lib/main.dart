@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // set variables here to not have to put them in constructor
+    // creates random word pair variable
+    final wordPair = WordPair.random();
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
@@ -24,5 +27,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// You can add dependencies on the command line, the example one is 
+// You can add dependencies on the command line, the example one is
 // flutter pub add english_words
