@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './random_words.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
           title: const Text('Welcome to Flutter'),
         ),
         body: const Center(
-            // will move random to another file
-            ),
+          child: RandomWords(),
+        ),
       ),
     );
   }
