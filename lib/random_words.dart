@@ -15,6 +15,6 @@ class _RandomWordsState extends State<RandomWords> {
     // creates random word pair variable
     final wordPair = WordPair.random();
 
-    return Container();
+    return Text(wordPair.asPascalCase);
   }
 }
