@@ -13,8 +13,12 @@ class _RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     // set variables here to not have to put them in constructor
     // creates random word pair variable
-    final wordPair = WordPair.random();
+    final _wordPair = <WordPair>[];
+    final _biggerFont = const TextStyle(fontSize: 22);
 
-    return Text(wordPair.asPascalCase);
+    return ListView.builder(
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, index) {},
+    );
   }
 }
