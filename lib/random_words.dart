@@ -18,7 +18,25 @@ class _RandomWordsState extends State<RandomWords> {
 
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, index) {},
+      itemBuilder: (context, index) {
+        if (index.isOdd) return const Divider();
+
+        final _suggestion = index ~/ 2;
+        if (_suggestion >= _wordPair.length) {
+          // this is an internal method to the english_words
+          // import that lets us make it as needed which is called
+          // lazy loading
+          _wordPair.addAll(generateWordPairs().take(10));
+        }
+
+        return ListTile(
+          title: Text(
+            _wordPair[index].asPascalCase,
+            // this lets you do a one stop shop on styling, super useful!
+            style: _biggerFont,
+          ),
+        );
+      },
     );
   }
 }
