@@ -13,27 +13,28 @@ class _RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     // set variables here to not have to put them in constructor
     // creates random word pair variable
-    final _wordPair = <WordPair>[];
-    final _biggerFont = const TextStyle(fontSize: 22);
+    final wordPair = <WordPair>[];
+    // for static styling just use const it wont change
+    const biggerFont = TextStyle(fontSize: 22.0);
 
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, index) {
         if (index.isOdd) return const Divider();
 
-        final _suggestion = index ~/ 2;
-        if (_suggestion >= _wordPair.length) {
+        final suggestion = index ~/ 2;
+        if (suggestion >= wordPair.length) {
           // this is an internal method to the english_words
           // import that lets us make it as needed which is called
           // lazy loading
-          _wordPair.addAll(generateWordPairs().take(10));
+          wordPair.addAll(generateWordPairs().take(10));
         }
 
         return ListTile(
           title: Text(
-            _wordPair[index].asPascalCase,
+            wordPair[index].asPascalCase,
             // this lets you do a one stop shop on styling, super useful!
-            style: _biggerFont,
+            style: biggerFont,
           ),
         );
       },
