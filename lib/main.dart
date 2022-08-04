@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Let's make this an infinite scrolling list of results
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
